@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2D1B0E;
+  --color-secondary: #3c2a21;
+  --color-accent: #f59e0b;
+  --color-light: #fef3c7;
+  --color-dark: #1a120b;
+}
+
+@layer base {
+  body {
+    background: linear-gradient(to bottom right, #1a120b, #3c2a21);
+    color: #fef3c7;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: #f59e0b;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary:hover {
+    background-color: #d97706;
+    box-shadow: 0 10px 15px -3px rgba(124, 45, 18, 0.3);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    border: 2px solid #f59e0b;
+    color: #fbbf24;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(245, 158, 11, 0.2);
+  }
+  
+  .card {
+    background-color: rgba(45, 27, 14, 0.5);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(124, 45, 18, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: rgba(245, 158, 11, 0.5);
+  }
+  
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 0.25rem;
+    background-color: #f59e0b;
+    border-radius: 9999px;
+  }
+}
